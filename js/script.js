@@ -11,33 +11,36 @@ const images = [
 
 let activeElement = 0;
 const listItem = document.getElementById('list-img');
-const containerPic = document.querySelectorAll('carousel-image img');
 
 
 for (let index = 0; index < images.length; index++) {
 
     // creo un nuovo elemento img
     const newItem = document.createElement('img');
-    // assegno la classe
-    newItem.classList.add('d-none');
+
     //assegno l'attributo src 
     newItem.setAttribute('src', images[index]);
 
     listItem.append(newItem);
 }
 
-// Aggiungo alla prima immagine la visibilità
-containerPic[activeElement].classList.add('d-block');
+const containerPic = document.querySelectorAll('.carousel-image img');
+
+containerPic[activeElement].classList.add('d-block')
 
 // prendo il bottone next
 const btnNext = document.getElementById("btn-next");
 
 btnNext.addEventListener('click', function () {
     containerPic[activeElement].classList.remove('d-block');
-    
-   activeElement++
 
-   containerPic[activeElement].classList.add('d-block');
+    activeElement++
+
+    if (activeElement === containerPic.length) {
+        activeElement = 0;
+    }
+
+    containerPic[activeElement].classList.add('d-block');
 
 })
 
