@@ -26,6 +26,7 @@ for (let index = 0; index < images.length; index++) {
 
 const containerPic = document.querySelectorAll('.carousel-image img');
 
+// aggiungo la classe d-block per visualizzare il primo elemento 
 containerPic[activeElement].classList.add('d-block')
 
 // prendo il bottone next
@@ -35,6 +36,23 @@ btnNext.addEventListener('click', function () {
     containerPic[activeElement].classList.remove('d-block');
 
     activeElement++
+
+    if (activeElement === containerPic.length) {
+        activeElement = 0;
+    }
+
+    containerPic[activeElement].classList.add('d-block');
+
+})
+
+// prendo il bottone previus
+const btnPrev = document.getElementById("btn-previous");
+
+btnPrev.addEventListener('click', function () {
+
+    containerPic[activeElement].classList.remove('d-block');
+
+    activeElement--
 
     if (activeElement === containerPic.length) {
         activeElement = 0;
