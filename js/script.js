@@ -23,7 +23,6 @@ for (let index = 0; index < images.length; index++) {
     newItem.setAttribute('src', images[index]);
 
     listItem.append(newItem);
-
 }
 
 // Aggiungo alla prima immagine la visibilità
@@ -33,8 +32,11 @@ images[activeElement].classList.add('d-block');
 const btnNext = document.getElementById("btn-next");
 
 btnNext.addEventListener('click', function () {
-
+   images[activeElement].classList.remove('d-block');
     
+   activeElement++
+
+   images[activeElement].classList.add('d-block');
 
 })
 
