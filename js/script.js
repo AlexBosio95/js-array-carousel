@@ -9,10 +9,8 @@ const images = [
     'https://mymodernmet.com/wp/wp-content/uploads/2020/02/Landscape-Photographer-of-the-Year-Sander-Grefte.jpg'
 ];
 
-
+let activeElement = 0;
 const listItem = document.getElementById('list-img');
-
-
 
 
 for (let index = 0; index < images.length; index++) {
@@ -20,20 +18,23 @@ for (let index = 0; index < images.length; index++) {
     // creo un nuovo elemento img
     const newItem = document.createElement('img');
     // assegno la classe
-    newItem.classList.add('d-block');
-
-    // console.log(newItem[index])
-
+    newItem.classList.add('d-none');
+    //assegno l'attributo src 
     newItem.setAttribute('src', images[index]);
 
     listItem.append(newItem);
 
 }
 
+// Aggiungo alla prima immagine la visibilità
+images[activeElement].classList.add('d-block');
+
 // prendo il bottone next
 const btnNext = document.getElementById("btn-next");
 
 btnNext.addEventListener('click', function () {
+
+    
 
 })
 
