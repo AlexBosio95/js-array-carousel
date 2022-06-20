@@ -35,6 +35,8 @@ const btnNext = document.getElementById("btn-next");
 btnNext.addEventListener('click', function () {
     containerPic[activeElement].classList.remove('d-block');
 
+
+    // vado avanti
     activeElement++
 
     if (activeElement === containerPic.length) {
@@ -45,13 +47,14 @@ btnNext.addEventListener('click', function () {
 
 })
 
-// prendo il bottone previus
+// prendo il bottone Previous
 const btnPrev = document.getElementById("btn-previous");
 
 btnPrev.addEventListener('click', function () {
 
     containerPic[activeElement].classList.remove('d-block');
 
+    // vado indietro
     activeElement--
 
     if (activeElement === containerPic.length) {
