@@ -11,6 +11,7 @@ const images = [
 
 let activeElement = 0;
 const listItem = document.getElementById('list-img');
+const containerPic = document.querySelectorAll('carousel-image img');
 
 
 for (let index = 0; index < images.length; index++) {
@@ -26,17 +27,17 @@ for (let index = 0; index < images.length; index++) {
 }
 
 // Aggiungo alla prima immagine la visibilità
-images[activeElement].classList.add('d-block');
+containerPic[activeElement].classList.add('d-block');
 
 // prendo il bottone next
 const btnNext = document.getElementById("btn-next");
 
 btnNext.addEventListener('click', function () {
-   images[activeElement].classList.remove('d-block');
+    containerPic[activeElement].classList.remove('d-block');
     
    activeElement++
 
-   images[activeElement].classList.add('d-block');
+   containerPic[activeElement].classList.add('d-block');
 
 })
 
