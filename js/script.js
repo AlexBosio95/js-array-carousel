@@ -57,8 +57,8 @@ btnPrev.addEventListener('click', function () {
     // vado indietro
     activeElement--
 
-    if (activeElement === containerPic.length) {
-        activeElement = 0;
+    if (activeElement === -1) {
+        activeElement = containerPic.length -1;
     }
 
     containerPic[activeElement].classList.add('d-block');
