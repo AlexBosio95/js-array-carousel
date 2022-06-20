@@ -9,3 +9,23 @@
     object-position: center;
     display: none;
 }
+
+.point{
+    width: 30px;
+    height: 30px;
+    background-color: deepskyblue;
+    border-radius: 50%;
+    margin: 10px;
+    position: relative;
+}
+
+.ms_active{
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

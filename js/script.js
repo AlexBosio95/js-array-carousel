@@ -24,10 +24,20 @@ for (let index = 0; index < images.length; index++) {
     listItem.append(newItem);
 }
 
+
+
+
+
+
+
+
+
+// poitSel[activeElement].classList.add('ms_active');
+
 const containerPic = document.querySelectorAll('.carousel-image img');
 
 // aggiungo la classe d-block per visualizzare il primo elemento 
-containerPic[activeElement].classList.add('d-block')
+containerPic[activeElement].classList.add('d-block');
 
 // prendo il bottone next
 const btnNext = document.getElementById("btn-next");
@@ -58,10 +68,34 @@ btnPrev.addEventListener('click', function () {
     activeElement--
 
     if (activeElement === -1) {
-        activeElement = containerPic.length -1;
+        activeElement = containerPic.length - 1;
     }
 
     containerPic[activeElement].classList.add('d-block');
 
 })
+
+// Point selector carousel
+
+const pointList = document.getElementById('point-selector');
+
+
+for (let index = 0; index < images.length; index++) {
+    const newPoint = document.createElement('div');
+    newPoint.classList.add('point');
+
+    pointList.append(newPoint);
+
+}
+
+const pointActive = document.querySelectorAll('#point-selector > .point');
+
+for (let index = 0; index < images.length; index++) {
+    const newPointPoint = document.createElement('div');
+    newPointPoint.classList.add('ms_active');
+
+    pointActive.append(newPointPoint);
+
+}
+
 
