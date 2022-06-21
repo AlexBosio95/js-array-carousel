@@ -13,7 +13,6 @@ let activeElement = 0;
 
 const listItem = document.getElementById('list-img');
 
-
 for (let index = 0; index < images.length; index++) {
 
     // creo un nuovo elemento img
@@ -21,6 +20,8 @@ for (let index = 0; index < images.length; index++) {
 
     //assegno l'attributo src 
     newItem.setAttribute('src', images[index]);
+    newItem.classList.add('rounded-4')
+    newItem.classList.add('shadow')
 
     listItem.append(newItem);
 }
@@ -79,6 +80,7 @@ const btnPrev = document.getElementById("btn-previous");
 btnPrev.addEventListener('click', function () {
 
     containerPic[activeElement].classList.remove('d-block');
+    pointList[activeElement].classList.remove('ms_active')
 
     // vado indietro
     activeElement--
@@ -88,8 +90,12 @@ btnPrev.addEventListener('click', function () {
     }
 
     containerPic[activeElement].classList.add('d-block');
+    pointList[activeElement].classList.add('ms_active')
 
 })
+
+
+
 
 
 

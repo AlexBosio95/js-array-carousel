@@ -13,12 +13,13 @@
 .point{
     width: 30px;
     height: 30px;
-    background-color: deepskyblue;
+    background-color: #0d6efd;
     border-radius: 50%;
     margin: 10px;
     position: relative;
 }
 
 .ms_active{
-    background-color: black;
+    background-color: white;
+    border: 3px solid #0d6efd;
 }
