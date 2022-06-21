@@ -10,6 +10,7 @@ const images = [
 ];
 
 let activeElement = 0;
+
 const listItem = document.getElementById('list-img');
 
 
@@ -25,16 +26,30 @@ for (let index = 0; index < images.length; index++) {
 }
 
 
+// Point selector carousel
+
+const contenitorPoint = document.getElementById('point-selector');
+
+
+for (let index = 0; index < images.length; index++) {
+    const newPoint = document.createElement('div');
+    newPoint.classList.add('point');
+
+    if (index == activeElement) {
+        newPoint.classList.add('ms_active')
+    }
+
+    contenitorPoint.append(newPoint);
+}
 
 
 
+// Bottoni per scorrere le immagini
 
 
-
-
-// poitSel[activeElement].classList.add('ms_active');
-
+// Prendo tutte le immagini
 const containerPic = document.querySelectorAll('.carousel-image img');
+const pointList = document.querySelectorAll('#point-selector .point')
 
 // aggiungo la classe d-block per visualizzare il primo elemento 
 containerPic[activeElement].classList.add('d-block');
@@ -44,7 +59,7 @@ const btnNext = document.getElementById("btn-next");
 
 btnNext.addEventListener('click', function () {
     containerPic[activeElement].classList.remove('d-block');
-
+    pointList[activeElement].classList.remove('ms_active')
 
     // vado avanti
     activeElement++
@@ -54,6 +69,7 @@ btnNext.addEventListener('click', function () {
     }
 
     containerPic[activeElement].classList.add('d-block');
+    pointList[activeElement].classList.add('ms_active')
 
 })
 
@@ -75,27 +91,9 @@ btnPrev.addEventListener('click', function () {
 
 })
 
-// Point selector carousel
-
-const pointList = document.getElementById('point-selector');
 
 
-for (let index = 0; index < images.length; index++) {
-    const newPoint = document.createElement('div');
-    newPoint.classList.add('point');
 
-    pointList.append(newPoint);
 
-}
-
-const pointActive = document.querySelectorAll('#point-selector > .point');
-
-for (let index = 0; index < images.length; index++) {
-    const newPointPoint = document.createElement('div');
-    newPointPoint.classList.add('ms_active');
-
-    pointActive.append(newPointPoint);
-
-}
 
 
